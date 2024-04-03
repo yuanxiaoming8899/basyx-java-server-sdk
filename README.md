@@ -1,39 +1,46 @@
-# Eclipse BaSyx Java V2 SDK [![Docker Pulls](https://img.shields.io/docker/pulls/eclipsebasyx/aas-server?style=plastic)](https://hub.docker.com/search?q=eclipsebasyx)
-[![BaSyx Logo](https://www.eclipse.org/basyx/img/basyxlogo.png)](https://www.eclipse.org/basyx/)
- 
-In this repository, the BaSyx Java V2 components fully compatible with *Details of the Asset Administration Shell V3* are as well as their respective Clients are contained. For each component, a multitude of backends (e.g., InMemory, MongoDB) as well as further features (MQTT, ...) are provided. All components are available on [DockerHub](https://hub.docker.com/search?q=eclipsebasyx) as off-the-shelf components and can be easily configured and extended. Additionally, the server SDK of this repository can be used for implementation of further components.
-
-## Server SDK
-The following off-the-shelf components are available:
-
-* [AAS Repository](basyx.aasrepository)
-* [Submodel Repository](basyx.submodelrepository)
-* [ConceptDescription Repository](basyx.conceptdescriptionrepository)
-* [AAS Environment](basyx.aasenvironment)
-* [AAS Registry](basyx.aasregistry)
-* [Submodel Registry](basyx.submodelregistry)
-* [AAS Discovery](basyx.aasdiscoveryservice)
-
-In addition, a blueprint for a Type 2/ Type 3 standalone submodel is provided:
-* [Type 2/Type 3 Submodel](basyx.submodelservice)
-
-## Client SDK
-In addition, the following Clients are available:
-* [AAS Repository Client](basyx.aasrepository/basyx.aasrepository-client)
-* [Submodel Repository Client](basyx.submodelrepository/basyx.submodelrepository-client)
-* [AAS Service Client](basyx.aasservice/basyx.aasservice-client)
-* [Submodel Service Client](basyx.submodelservice/basyx.submodelservice-client)
-
-## Documentation, Roadmap & Examples
-In addition to the [general documentation](https://github.com/eclipse-basyx/basyx-java-server-sdk/tree/main/docs), each component has its own specific documentation that can be found in the respective folders. 
-Furthermore, we are providing easy to use [examples](examples) that can be leveraged for setting up your own AAS infrastructure.
-The future roadmap of BaSyx is described [here](https://github.com/eclipse-basyx/basyx-java-server-sdk/blob/main/docs/Roadmap.md).
-
-## Snapshot Releases
-We're distributing our SNAPSHOT releases via DockerHub and Maven Central. For using the snapshots from Maven Central, add the following part to your project's POM:
-
-```
-<repository>
+<div class="Box-sc-g0xbh4-0 bJMeLZ js-snippet-clipboard-copy-unpositioned" data-hpc="true"><article class="markdown-body entry-content container-lg" itemprop="text"><div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Eclipse BaSyx Java V2 SDK</font></font><a href="https://hub.docker.com/search?q=eclipsebasyx" rel="nofollow"><img src="https://camo.githubusercontent.com/f3d6a83d223bbfdf3bcd75899ba02042f2d656cb1e837d2c9dee2706ad3d8186/68747470733a2f2f696d672e736869656c64732e696f2f646f636b65722f70756c6c732f65636c6970736562617379782f6161732d7365727665723f7374796c653d706c6173746963" alt="Docker 拉取" data-canonical-src="https://img.shields.io/docker/pulls/eclipsebasyx/aas-server?style=plastic" style="max-width: 100%;"></a></h1><a id="user-content-eclipse-basyx-java-v2-sdk-" class="anchor" aria-label="永久链接：Eclipse BaSyx Java V2 SDK" href="#eclipse-basyx-java-v2-sdk-"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><a href="https://www.eclipse.org/basyx/" rel="nofollow"><img src="https://camo.githubusercontent.com/f13347d0549a9752f653e77b7cdbf6ee14235d6d0be313dd52b71763f1edf675/68747470733a2f2f7777772e65636c697073652e6f72672f62617379782f696d672f62617379786c6f676f2e706e67" alt="巴西克斯标志" data-canonical-src="https://www.eclipse.org/basyx/img/basyxlogo.png" style="max-width: 100%;"></a></p>
+<p dir="auto"><font style="vertical-align: inherit;"></font><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在此存储库中，包含与资产管理外壳 V3 的详细信息</font></font></em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">完全兼容的 BaSyx Java V2 组件</font><font style="vertical-align: inherit;">及其各自的客户端。对于每个组件，都提供了多个后端（例如，InMemory、MongoDB）以及更多功能（MQTT，...）。所有组件都可以</font><font style="vertical-align: inherit;">作为现成组件在</font></font><a href="https://hub.docker.com/search?q=eclipsebasyx" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DockerHub</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">上使用，并且可以轻松配置和扩展。此外，该存储库的服务器 SDK 可用于实现其他组件。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">服务器软件开发工具包</font></font></h2><a id="user-content-server-sdk" class="anchor" aria-label="永久链接：服务器 SDK" href="#server-sdk"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">可以使用以下现成组件：</font></font></p>
+<ul dir="auto">
+<li><a href="/eclipse-basyx/basyx-java-server-sdk/blob/main/basyx.aasrepository"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">AAS 存储库</font></font></a></li>
+<li><a href="/eclipse-basyx/basyx-java-server-sdk/blob/main/basyx.submodelrepository"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">子模型存储库</font></font></a></li>
+<li><a href="/eclipse-basyx/basyx-java-server-sdk/blob/main/basyx.conceptdescriptionrepository"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">概念描述存储库</font></font></a></li>
+<li><a href="/eclipse-basyx/basyx-java-server-sdk/blob/main/basyx.aasenvironment"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">原子吸收光谱法环境</font></font></a></li>
+<li><a href="/eclipse-basyx/basyx-java-server-sdk/blob/main/basyx.aasregistry"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">原子吸收系统登记处</font></font></a></li>
+<li><a href="/eclipse-basyx/basyx-java-server-sdk/blob/main/basyx.submodelregistry"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">子模型注册表</font></font></a></li>
+<li><a href="/eclipse-basyx/basyx-java-server-sdk/blob/main/basyx.aasdiscoveryservice"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">原子吸收光谱法发现</font></font></a></li>
+</ul>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">此外，还提供了 Type 2/Type 3 独立子模型的蓝图：</font></font></p>
+<ul dir="auto">
+<li><a href="/eclipse-basyx/basyx-java-server-sdk/blob/main/basyx.submodelservice"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2 型/3 型子型号</font></font></a></li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">客户端SDK</font></font></h2><a id="user-content-client-sdk" class="anchor" aria-label="永久链接：客户端 SDK" href="#client-sdk"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">此外，还可以使用以下客户端：</font></font></p>
+<ul dir="auto">
+<li><a href="/eclipse-basyx/basyx-java-server-sdk/blob/main/basyx.aasrepository/basyx.aasrepository-client"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">AAS 存储库客户端</font></font></a></li>
+<li><a href="/eclipse-basyx/basyx-java-server-sdk/blob/main/basyx.submodelrepository/basyx.submodelrepository-client"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">子模型存储库客户端</font></font></a></li>
+<li><a href="/eclipse-basyx/basyx-java-server-sdk/blob/main/basyx.aasservice/basyx.aasservice-client"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">AAS 服务客户端</font></font></a></li>
+<li><a href="/eclipse-basyx/basyx-java-server-sdk/blob/main/basyx.submodelservice/basyx.submodelservice-client"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">子模型服务客户端</font></font></a></li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">文档、路线图和示例</font></font></h2><a id="user-content-documentation-roadmap--examples" class="anchor" aria-label="永久链接：文档、路线图和示例" href="#documentation-roadmap--examples"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"></font><a href="https://github.com/eclipse-basyx/basyx-java-server-sdk/tree/main/docs"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">除了一般文档</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">之外</font><font style="vertical-align: inherit;">，每个组件都有自己的特定文档，可以在各自的文件夹中找到。此外，我们还提供易于使用的</font></font><a href="/eclipse-basyx/basyx-java-server-sdk/blob/main/examples"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">示例</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">，可用于设置您自己的 AAS 基础设施。 BaSyx 的未来路线图描述</font></font><a href="https://github.com/eclipse-basyx/basyx-java-server-sdk/blob/main/docs/Roadmap.md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如下</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">快照发布</font></font></h2><a id="user-content-snapshot-releases" class="anchor" aria-label="永久链接：快照版本" href="#snapshot-releases"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">我们通过 DockerHub 和 Maven Central 分发我们的 SNAPSHOT 版本。要使用 Maven Central 的快照，请将以下部分添加到项目的 POM 中：</font></font></p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>&lt;repository&gt;
+	&lt;id&gt;sonatype.snapshots&lt;/id&gt;
+	&lt;name&gt;Sonatype Snapshot Repository&lt;/name&gt;
+	&lt;url&gt;https://oss.sonatype.org/content/repositories/snapshots&lt;/url&gt;
+	&lt;releases&gt;
+		&lt;enabled&gt;false&lt;/enabled&gt;
+	&lt;/releases&gt;
+	&lt;snapshots&gt;
+		&lt;enabled&gt;true&lt;/enabled&gt;
+	&lt;/snapshots&gt;
+&lt;/repository&gt;
+</code></pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="<repository>
 	<id>sonatype.snapshots</id>
 	<name>Sonatype Snapshot Repository</name>
 	<url>https://oss.sonatype.org/content/repositories/snapshots</url>
@@ -43,10 +50,16 @@ We're distributing our SNAPSHOT releases via DockerHub and Maven Central. For us
 	<snapshots>
 		<enabled>true</enabled>
 	</snapshots>
-</repository>
-```
-
-## Getting Involved & Contributing
-If you would like to get involved with the BaSyx Community, the [BaSyx Open Hour](https://www.iese.fraunhofer.de/en/customers_industries/digitalisierung-produktion/industrie40/basyx_open_hour.html) (every first Friday of the month) is an excellent starting point.
-
-For contributing, please note the [contribution guidelines](CONTRIBUTING.md). The overall process is described in the [Eclipse wiki](https://wiki.eclipse.org/BaSyx_/_Developer_/_Contributing).
+</repository>" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">参与并做出贡献</font></font></h2><a id="user-content-getting-involved--contributing" class="anchor" aria-label="永久链接：参与并做出贡献" href="#getting-involved--contributing"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如果您想加入 BaSyx 社区，</font></font><a href="https://www.iese.fraunhofer.de/en/customers_industries/digitalisierung-produktion/industrie40/basyx_open_hour.html" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">BaSyx 开放时间</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（每个月的第一个星期五）是一个很好的起点。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如需贡献，请注意</font></font><a href="/eclipse-basyx/basyx-java-server-sdk/blob/main/CONTRIBUTING.md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">贡献指南</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。整个过程在</font></font><a href="https://wiki.eclipse.org/BaSyx_/_Developer_/_Contributing" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Eclipse wiki</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">中有描述。</font></font></p>
+</article></div>
